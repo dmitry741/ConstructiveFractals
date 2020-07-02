@@ -50,7 +50,7 @@ namespace ConstructiveFractals
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "frmMain";
-            this.Text = "Form1";
+            this.Text = "Конструктивные фракталы";
             this.Load += new System.EventHandler(this.frmMain_Load);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.frmMain_Paint);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
