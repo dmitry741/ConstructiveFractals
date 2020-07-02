@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace ConstructiveFractals
 {   
+    /// <summary>
+    /// Абстрактный класс конструтивного фрактала.
+    /// </summary>
     abstract class AbstractConsructiveFractal
     {
         List<PointF> _points = null;
