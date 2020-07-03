@@ -20,7 +20,7 @@ namespace ConstructiveFractals
         #region memebers
 
         Bitmap _bitmap = null;
-        AbstractConsructiveFractal _fractal = null;
+        IConstructiveFractal _fractal = null;
 
         #endregion
 
@@ -28,8 +28,8 @@ namespace ConstructiveFractals
 
         void RenderFractal(Graphics g)
         {
-            PointF start = new PointF(32, pictureBox1.Height - 32);
-            PointF end = new PointF(pictureBox1.Width - 32, pictureBox1.Height - 32);
+            PointF start = new PointF(16, pictureBox1.Height - 16);
+            PointF end = new PointF(pictureBox1.Width - 16, pictureBox1.Height - 16);
             int N = comboBox1.SelectedIndex + 1;
             IEnumerable<PointF> points = _fractal.Build(N, start, end);
 

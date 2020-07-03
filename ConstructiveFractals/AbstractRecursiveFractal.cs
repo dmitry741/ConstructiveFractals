@@ -10,10 +10,8 @@ namespace ConstructiveFractals
     /// <summary>
     /// Абстрактный класс конструтивного фрактала.
     /// </summary>
-    abstract class AbstractConsructiveFractal
+    abstract class AbstractRecursiveFractal : IConstructiveFractal
     {
-        public float SegmentLenght { get; set; } = 4.0f;
-
         protected abstract IEnumerable<PointF> TransformSegment(PointF point1, PointF point2);
 
         public IEnumerable<PointF> Build(int N, PointF startPoint, PointF endPoint)
@@ -27,9 +25,8 @@ namespace ConstructiveFractals
             for (int i = 0; i < N; i++)
             {
                 List<PointF> t = new List<PointF>();
-                int count = points.Count - 1;
 
-                for (int j = 0; j < count; j++)
+                for (int j = 0; j < points.Count - 1; j++)
                 {
                     t.Add(points[j + 0]);
                     t.AddRange(TransformSegment(points[j + 0], points[j + 1]));                  
