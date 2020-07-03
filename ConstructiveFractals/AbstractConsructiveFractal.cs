@@ -22,11 +22,11 @@ namespace ConstructiveFractals
 
         public IEnumerable<PointF> Build(int N, PointF startPoint, PointF endPoint)
         {
-            _points = new List<PointF>();
-            
-
-            _points.Add(startPoint);
-            _points.Add(endPoint);
+            _points = new List<PointF>
+            {
+                startPoint,
+                endPoint
+            };
 
             for (int i = 0; i < N; i++)
             {
@@ -38,14 +38,14 @@ namespace ConstructiveFractals
                     PointF point1 = _points[j + 0];
                     PointF point2 = _points[j + 1];
 
-                    IEnumerable<PointF> temps = TransformSegment(point1, point2);
-                    t.AddRange(temps);
+                    t.Add(point1);
+                    t.AddRange(TransformSegment(point1, point2));                    
                 }
+
+                t.Add(endPoint);
 
                 _points = t;
             }
-
-            // TODO:
 
             return _points;
         }
