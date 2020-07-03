@@ -71,6 +71,7 @@ namespace ConstructiveFractals
 
             comboBox1.SelectedIndex = 3;
 
+            // типы фракталов
             comboBox2.Items.Add("Кривая Коха");
             comboBox2.Items.Add("Дракон");
             comboBox2.SelectedIndex = 0;

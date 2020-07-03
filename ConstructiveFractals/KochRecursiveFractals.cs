@@ -14,7 +14,7 @@ namespace ConstructiveFractals
             float d = 1.0f / 3.0f;
             PointF vector = new PointF(point2.X - point1.X, point2.Y - point1.Y);
 
-            PointF p1 = new PointF(point1.X + vector.X * d, point1.Y + vector.Y * d);
+            PointF p1 = new PointF(point1.X + vector.X * 1 * d, point1.Y + vector.Y * 1 * d);
             PointF p3 = new PointF(point1.X + vector.X * 2 * d, point1.Y + vector.Y * 2 * d);
 
             double angle = Math.PI / 3;

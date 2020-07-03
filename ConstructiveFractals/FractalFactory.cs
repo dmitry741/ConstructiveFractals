@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace ConstructiveFractals
 {
+    /// <summary>
+    /// Класс-фабрика для создания фрактала по исходным данным пользовательского интерфейса.
+    /// </summary>
     class FractalFactory
     {
         public static IConstructiveFractal GetConstructiveFractal(int index)
