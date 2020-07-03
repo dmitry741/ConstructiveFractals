@@ -12,7 +12,6 @@ namespace ConstructiveFractals
         protected override IEnumerable<PointF> TransformSegment(PointF point1, PointF point2)
         {
             float d = 1.0f / 3.0f;
-
             PointF vector = new PointF(point2.X - point1.X, point2.Y - point1.Y);
 
             PointF p1 = new PointF(point1.X + vector.X * d, point1.Y + vector.Y * d);
@@ -20,10 +19,11 @@ namespace ConstructiveFractals
 
             double angle = Math.PI / 3;
 
-            double x = Math.Cos(angle) * (p3.X - p1.X) - Math.Sin(angle) * (p3.Y - p1.Y) + p1.X;
-            double y = -Math.Sin(angle) * (p3.X - p1.X) + Math.Cos(angle) * (p3.Y - p1.Y) + p1.Y;
-
-            PointF p2 = new PointF(Convert.ToSingle(x), Convert.ToSingle(y));
+            PointF p2 = new PointF
+            {
+                X = Convert.ToSingle(Math.Cos(angle) * (p3.X - p1.X) + Math.Sin(angle) * (p3.Y - p1.Y) + p1.X),
+                Y = Convert.ToSingle(-Math.Sin(angle) * (p3.X - p1.X) + Math.Cos(angle) * (p3.Y - p1.Y) + p1.Y)
+            };
 
             return new List<PointF>
             {

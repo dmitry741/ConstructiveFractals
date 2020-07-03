@@ -12,17 +12,13 @@ namespace ConstructiveFractals
     /// </summary>
     abstract class AbstractConsructiveFractal
     {
-        List<PointF> _points = null;
-
         public float SegmentLenght { get; set; } = 4.0f;
-
-        public IEnumerable<PointF> Points => _points;
 
         protected abstract IEnumerable<PointF> TransformSegment(PointF point1, PointF point2);
 
         public IEnumerable<PointF> Build(int N, PointF startPoint, PointF endPoint)
         {
-            _points = new List<PointF>
+            List<PointF> points = new List<PointF>
             {
                 startPoint,
                 endPoint
@@ -31,28 +27,19 @@ namespace ConstructiveFractals
             for (int i = 0; i < N; i++)
             {
                 List<PointF> t = new List<PointF>();
-                int count = _points.Count - 1;
+                int count = points.Count - 1;
 
                 for (int j = 0; j < count; j++)
                 {
-                    PointF point1 = _points[j + 0];
-                    PointF point2 = _points[j + 1];
-
-                    t.Add(point1);
-                    t.AddRange(TransformSegment(point1, point2));                    
+                    t.Add(points[j + 0]);
+                    t.AddRange(TransformSegment(points[j + 0], points[j + 1]));                  
                 }
 
                 t.Add(endPoint);
-
-                _points = t;
+                points = t;
             }
 
-            return _points;
+            return points;
         }
-
-
-
-
-
     }
 }

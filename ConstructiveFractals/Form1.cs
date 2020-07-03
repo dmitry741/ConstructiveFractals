@@ -20,10 +20,21 @@ namespace ConstructiveFractals
         #region memebers
 
         Bitmap _bitmap = null;
+        AbstractConsructiveFractal _fractal = null;
 
         #endregion
 
         #region private
+
+        void RenderFractal(Graphics g)
+        {
+            PointF start = new PointF(32, pictureBox1.Height - 32);
+            PointF end = new PointF(pictureBox1.Width - 32, pictureBox1.Height - 32);
+            int N = comboBox1.SelectedIndex + 1;
+            IEnumerable<PointF> points = _fractal.Build(N, start, end);
+
+            g.DrawLines(Pens.Black, points.ToArray());
+        }
 
         void Render()
         {
@@ -33,9 +44,7 @@ namespace ConstructiveFractals
             Graphics g = Graphics.FromImage(_bitmap);
             g.Clear(Color.White);
 
-            g.DrawString("All ok", new Font("Arial", 24f, FontStyle.Regular), Brushes.Black, new Point(20, 20));
-
-            // TODO:
+            RenderFractal(g);
 
             pictureBox1.Image = _bitmap;
         }
@@ -51,6 +60,16 @@ namespace ConstructiveFractals
         {
             pictureBox1.BackColor = Color.White;
             _bitmap = CreateBackground(pictureBox1.Width, pictureBox1.Height);
+            _fractal = new KochFractals();
+
+            const int cMaxIteration = 5;
+
+            for (int i = 1; i <= cMaxIteration; i++)
+            {
+                comboBox1.Items.Add(i);
+            }
+
+            comboBox1.SelectedIndex = 3;
         }
 
         private void pictureBox1_SizeChanged(object sender, EventArgs e)
@@ -59,6 +78,16 @@ namespace ConstructiveFractals
         }
 
         private void frmMain_Paint(object sender, PaintEventArgs e)
+        {
+            Render();
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             Render();
         }
