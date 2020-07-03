@@ -47,14 +47,16 @@
   <ItemGroup>
     <Compile Include="AbstractDirectFractal.cs" />
     <Compile Include="AbstractRecursiveFractal.cs" />
+    <Compile Include="DragonRecursiveFractal.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="FractalFactory.cs" />
     <Compile Include="IConstructiveFractal.cs" />
-    <Compile Include="KochFractals.cs" />
+    <Compile Include="KochRecursiveFractals.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">

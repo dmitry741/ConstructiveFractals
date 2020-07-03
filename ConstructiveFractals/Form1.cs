@@ -28,8 +28,8 @@ namespace ConstructiveFractals
 
         void RenderFractal(Graphics g)
         {
-            PointF start = new PointF(16, pictureBox1.Height - 16);
-            PointF end = new PointF(pictureBox1.Width - 16, pictureBox1.Height - 16);
+            PointF start = new PointF(16, pictureBox1.Height / 2);
+            PointF end = new PointF(pictureBox1.Width - 16, pictureBox1.Height / 2);
             int N = comboBox1.SelectedIndex + 1;
             IEnumerable<PointF> points = _fractal.Build(N, start, end);
 
@@ -60,7 +60,7 @@ namespace ConstructiveFractals
         {
             pictureBox1.BackColor = Color.White;
             _bitmap = CreateBackground(pictureBox1.Width, pictureBox1.Height);
-            _fractal = new KochFractals();
+            _fractal = FractalFactory.GetConstructiveFractal(0);
 
             const int cMaxIteration = 5;
 
@@ -70,6 +70,10 @@ namespace ConstructiveFractals
             }
 
             comboBox1.SelectedIndex = 3;
+
+            comboBox2.Items.Add("Кривая Коха");
+            comboBox2.Items.Add("Дракон");
+            comboBox2.SelectedIndex = 0;
         }
 
         private void pictureBox1_SizeChanged(object sender, EventArgs e)
@@ -89,6 +93,12 @@ namespace ConstructiveFractals
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            Render();
+        }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            _fractal = FractalFactory.GetConstructiveFractal(comboBox2.SelectedIndex);
             Render();
         }
     }

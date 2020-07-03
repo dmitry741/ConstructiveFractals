@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ConstructiveFractals
 {
-    class KochFractals : AbstractRecursiveFractal
+    class KochRecursiveFractals : AbstractRecursiveFractal
     {
         protected override IEnumerable<PointF> TransformSegment(PointF point1, PointF point2)
         {
