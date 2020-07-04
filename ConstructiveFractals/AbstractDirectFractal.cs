@@ -12,9 +12,26 @@ namespace ConstructiveFractals
         double[] _angle = null;
         float[] _lenght = null;
 
-        private static Stack<int> ConvertNumericSystem(int value, int baseSystem)
+        private static Stack<int> ConvertNumericSystem(int v, int baseSystem)
         {
-            return null;
+            Stack<int> stack = new Stack<int>();
+            int b = v, r;
+
+            while (true)
+            {                
+                r = b % baseSystem;
+                b /= baseSystem;
+
+                stack.Push(r);
+
+                if (b < baseSystem)
+                {
+                    stack.Push(b);
+                    break;
+                }
+            }
+
+            return stack;
         }
 
         public IEnumerable<PointF> Build(int N, PointF startPoint, PointF endPoint)
