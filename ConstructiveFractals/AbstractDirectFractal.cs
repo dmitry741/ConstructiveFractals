@@ -9,8 +9,9 @@ namespace ConstructiveFractals
 {
     class AbstractDirectFractal : IConstructiveFractal
     {
-        double[] _angle = null;
-        float[] _lenght = null;
+        protected  double[] _angle = null;
+        protected float[] _lenght = null;
+        protected  int _fragmentsPerStep = 0;
 
         private IEnumerable<int> ConvertNumericSystem(int v, int baseSystem)
         {
