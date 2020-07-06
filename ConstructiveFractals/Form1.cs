@@ -74,6 +74,7 @@ namespace ConstructiveFractals
             // типы фракталов
             comboBox2.Items.Add("Кривая Коха");
             comboBox2.Items.Add("Дракон");
+            comboBox2.Items.Add("Лед");
             comboBox2.SelectedIndex = 0;
         }
 
@@ -98,6 +99,18 @@ namespace ConstructiveFractals
         }
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            _fractal = FractalFactory.GetConstructiveFractal(radioButton1.Checked ? 0 : 1, comboBox2.SelectedIndex);
+            Render();
+        }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+            _fractal = FractalFactory.GetConstructiveFractal(radioButton1.Checked ? 0 : 1, comboBox2.SelectedIndex);
+            Render();
+        }
+
+        private void radioButton2_CheckedChanged(object sender, EventArgs e)
         {
             _fractal = FractalFactory.GetConstructiveFractal(radioButton1.Checked ? 0 : 1, comboBox2.SelectedIndex);
             Render();
