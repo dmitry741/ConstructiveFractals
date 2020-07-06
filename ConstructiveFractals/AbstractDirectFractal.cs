@@ -59,8 +59,8 @@ namespace ConstructiveFractals
 
             for (int i = 0; i < numberOfSegments; i++)
             {
-                PointF point = new PointF(points[i].X + vector.X * lens[i % _fragmentsPerStep], points[i].Y + vector.Y * lens[i % _fragmentsPerStep]);
-                PointF p = Rotate(point, points[i], GetAngle(i));
+                PointF preparePoint = new PointF(points[i].X + vector.X * lens[i % _fragmentsPerStep], points[i].Y + vector.Y * lens[i % _fragmentsPerStep]);
+                PointF p = Rotate(preparePoint, points[i], GetAngle(i));
                 points.Add(p);
             }
 
