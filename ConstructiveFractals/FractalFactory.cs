@@ -24,7 +24,8 @@ namespace ConstructiveFractals
             }
             else
             {
-                fractal = new KochDirectFractals();
+                //fractal = new KochDirectFractals();
+                fractal = new DragonDirectFractal();
             }
 
             return fractal;
