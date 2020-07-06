@@ -60,7 +60,7 @@ namespace ConstructiveFractals
         {
             pictureBox1.BackColor = Color.White;
             _bitmap = CreateBackground(pictureBox1.Width, pictureBox1.Height);
-            _fractal = FractalFactory.GetConstructiveFractal(0);
+            _fractal = FractalFactory.GetConstructiveFractal(radioButton1.Checked ? 0 : 1, 0);
 
             const int cMaxIteration = 5;
 
@@ -69,7 +69,7 @@ namespace ConstructiveFractals
                 comboBox1.Items.Add(i);
             }
 
-            comboBox1.SelectedIndex = 3;
+            comboBox1.SelectedIndex = 0;
 
             // типы фракталов
             comboBox2.Items.Add("Кривая Коха");
@@ -99,7 +99,7 @@ namespace ConstructiveFractals
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
-            _fractal = FractalFactory.GetConstructiveFractal(comboBox2.SelectedIndex);
+            _fractal = FractalFactory.GetConstructiveFractal(radioButton1.Checked ? 0 : 1, comboBox2.SelectedIndex);
             Render();
         }
     }

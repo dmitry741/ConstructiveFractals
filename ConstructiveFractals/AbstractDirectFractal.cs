@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 
 namespace ConstructiveFractals
 {
-    class AbstractDirectFractal : IConstructiveFractal
+    abstract class AbstractDirectFractal : IConstructiveFractal
     {
         protected double[] _angles = null;
-        protected double[] _lenghts = null;
+        protected float[] _lenghts = null;
         protected  int _fragmentsPerStep = 0;
 
         private IEnumerable<int> ConvertNumericSystem(int v)
@@ -38,17 +38,14 @@ namespace ConstructiveFractals
             double co = Math.Cos(angle);
             double si = Math.Sin(angle);
 
-            double x = Convert.ToSingle(co * (point.X - center.X) + si * (point.Y - center.Y) + center.X);
-            double y = Convert.ToSingle(-si * (point.X - center.X) + co * (point.Y - center.Y) + center.Y);
+            double x = co * (point.X - center.X) + si * (point.Y - center.Y) + center.X;
+            double y = -si * (point.X - center.X) + co * (point.Y - center.Y) + center.Y;
 
             return new PointF { X = Convert.ToSingle(x), Y = Convert.ToSingle(y) };
         }
 
         public IEnumerable<PointF> Build(int N, PointF startPoint, PointF endPoint)
         {
-            PointF vector = new PointF(startPoint.X - endPoint.X, startPoint.Y - endPoint.Y);
-            //double sourceLen = Math.Sqrt(vector.X * vector.X + vector.Y * vector.Y);
-            float[] lens = _lenghts.Select(x => Convert.ToSingle(Math.Pow(x, N))).ToArray();
             int numberOfSegments = 1;
 
             for (int i = 0; i < N; i++)
@@ -56,19 +53,16 @@ namespace ConstructiveFractals
                 numberOfSegments *= _fragmentsPerStep;
             }
 
-            PointF second = Rotate(new PointF(startPoint.X + vector.X * lens[0], startPoint.Y + vector.Y * lens[0]), startPoint, GetAngle(0));
-            List<PointF> points = new List<PointF> { startPoint, second };
+            List<PointF> points = new List<PointF> { startPoint };
+            PointF vector = new PointF(endPoint.X - startPoint.X, endPoint.Y - startPoint.Y);
+            float[] lens = _lenghts.Select(x => Convert.ToSingle(Math.Pow(x, N))).ToArray();
 
-            for (int i = 2; i <= numberOfSegments; i++)
+            for (int i = 0; i < numberOfSegments; i++)
             {
-                vector.X = points[i - 1].X - points[i - 2].X;
-                vector.Y = points[i - 1].Y - points[i - 2].Y;
-
-                PointF preparePoint = new PointF(points[i - 1].X + vector.X * lens[i % _fragmentsPerStep], (points[i - 1].Y + vector.Y * lens[i % _fragmentsPerStep]));
-                points.Add(Rotate(preparePoint, points[i - 1], GetAngle(i)));
+                PointF point = new PointF(points[i].X + vector.X * lens[i % _fragmentsPerStep], points[i].Y + vector.Y * lens[i % _fragmentsPerStep]);
+                PointF p = Rotate(point, points[i], GetAngle(i));
+                points.Add(p);
             }
-
-            points.Add(endPoint);
 
             return points;
         }

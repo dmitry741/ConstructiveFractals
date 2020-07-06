@@ -61,22 +61,22 @@ namespace ConstructiveFractals
             // radioButton1
             // 
             this.radioButton1.AutoSize = true;
-            this.radioButton1.Checked = true;
             this.radioButton1.Location = new System.Drawing.Point(736, 13);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(127, 17);
             this.radioButton1.TabIndex = 2;
-            this.radioButton1.TabStop = true;
             this.radioButton1.Text = "Рекурсивный метод";
             this.radioButton1.UseVisualStyleBackColor = true;
             // 
             // radioButton2
             // 
             this.radioButton2.AutoSize = true;
+            this.radioButton2.Checked = true;
             this.radioButton2.Location = new System.Drawing.Point(736, 36);
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(127, 17);
             this.radioButton2.TabIndex = 3;
+            this.radioButton2.TabStop = true;
             this.radioButton2.Text = "Прямое построение";
             this.radioButton2.UseVisualStyleBackColor = true;
             // 
