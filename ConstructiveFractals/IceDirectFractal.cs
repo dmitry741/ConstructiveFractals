@@ -20,8 +20,8 @@ namespace ConstructiveFractals
             _angles[3] = 0;
 
             _lenghts[0] = 0.5f;
-            _lenghts[1] = 1.0f / 3.0f;
-            _lenghts[2] = 1.0f / 3.0f;
+            _lenghts[1] = 0.33f;
+            _lenghts[2] = 0.33f;
             _lenghts[3] = 0.5f;
         }
     }

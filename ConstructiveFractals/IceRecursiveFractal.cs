@@ -12,7 +12,7 @@ namespace ConstructiveFractals
         protected override IEnumerable<PointF> TransformSegment(PointF point1, PointF point2)
         {
             const float d1 = 0.5f;
-            const float d2 = 1.0f / 3.0f;
+            const float d2 = 0.33f;
             PointF vector = new PointF(point2.X - point1.X, point2.Y - point1.Y);
             PointF[] points = new PointF[3];
 

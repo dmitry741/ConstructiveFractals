@@ -20,7 +20,7 @@ namespace ConstructiveFractals
                 if (index == 0)
                     fractal = new KochRecursiveFractals();
                 else if (index == 1)
-                    fractal = new DragonRecursiveFractal();
+                    fractal = new MinkowskiRecursiveFractal();
                 else
                     fractal = new IceRecursiveFractal();
             }
@@ -29,7 +29,7 @@ namespace ConstructiveFractals
                 if (index == 0)
                     fractal = new KochDirectFractals();
                 else if (index == 1)
-                    fractal = new DragonDirectFractal();
+                    fractal = new MinkowskiDirectFractal();
                 else
                     fractal = new IceDirectFractal();
             }

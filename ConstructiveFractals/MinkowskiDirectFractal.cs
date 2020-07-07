@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace ConstructiveFractals
 {
-    class DragonDirectFractal : AbstractDirectFractal
+    class MinkowskiDirectFractal : AbstractDirectFractal
     {
-        public DragonDirectFractal()
+        public MinkowskiDirectFractal()
         {
             _fragmentsPerStep = 8;
             _lenghts = new float[_fragmentsPerStep];

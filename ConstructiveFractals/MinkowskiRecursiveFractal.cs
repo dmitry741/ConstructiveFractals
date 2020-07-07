@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ConstructiveFractals
 {
-    class DragonRecursiveFractal : AbstractRecursiveFractal
+    class MinkowskiRecursiveFractal : AbstractRecursiveFractal
     {
         protected override IEnumerable<PointF> TransformSegment(PointF point1, PointF point2)
         {

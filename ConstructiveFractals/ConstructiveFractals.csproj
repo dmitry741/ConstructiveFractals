@@ -47,8 +47,8 @@
   <ItemGroup>
     <Compile Include="AbstractDirectFractal.cs" />
     <Compile Include="AbstractRecursiveFractal.cs" />
-    <Compile Include="DragonDirectFractal.cs" />
-    <Compile Include="DragonRecursiveFractal.cs" />
+    <Compile Include="MinkowskiDirectFractal.cs" />
+    <Compile Include="MinkowskiRecursiveFractal.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
