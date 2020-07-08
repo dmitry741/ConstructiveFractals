@@ -29,7 +29,7 @@ namespace ConstructiveFractals
                 for (int j = 0; j < points.Count - 1; j++)
                 {
                     t.Add(points[j]);
-                    t.AddRange(TransformSegment(points[j + 0], points[j + 1]));                  
+                    t.AddRange(TransformSegment(points[j + 0], points[j + 1]));             
                 }
 
                 t.Add(endPoint);

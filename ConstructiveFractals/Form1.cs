@@ -76,6 +76,7 @@ namespace ConstructiveFractals
             comboBox2.Items.Add("Кривая Коха");
             comboBox2.Items.Add("Минковский");
             comboBox2.Items.Add("Дракон");
+            comboBox2.Items.Add("Лед");
             comboBox2.SelectedIndex = 0;
         }
 

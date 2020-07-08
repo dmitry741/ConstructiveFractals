@@ -19,8 +19,10 @@ namespace ConstructiveFractals
                 fractal = new KochRecursiveFractals();
             else if (index == 1)
                 fractal = new MinkowskiRecursiveFractal();
-            else
+            else if (index == 2)
                 fractal = new DragonRecursiveFractal();
+            else
+                fractal = new IceRecursiveFractal();
 
             return fractal;
         }

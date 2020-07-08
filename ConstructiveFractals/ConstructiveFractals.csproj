@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AbstractRecursiveFractal.cs" />
+    <Compile Include="IceRecursiveFractal.cs" />
     <Compile Include="MinkowskiRecursiveFractal.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>

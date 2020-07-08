@@ -41,14 +41,14 @@ namespace ConstructiveFractals
             // 
             this.pictureBox1.Location = new System.Drawing.Point(12, 12);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(850, 535);
+            this.pictureBox1.Size = new System.Drawing.Size(850, 566);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.SizeChanged += new System.EventHandler(this.pictureBox1_SizeChanged);
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(887, 516);
+            this.btnClose.Location = new System.Drawing.Point(886, 547);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(108, 31);
             this.btnClose.TabIndex = 1;
@@ -98,7 +98,7 @@ namespace ConstructiveFractals
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1007, 556);
+            this.ClientSize = new System.Drawing.Size(1007, 590);
             this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
