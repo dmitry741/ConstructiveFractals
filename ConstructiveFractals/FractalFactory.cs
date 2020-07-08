@@ -11,28 +11,16 @@ namespace ConstructiveFractals
     /// </summary>
     class FractalFactory
     {
-        public static IConstructiveFractal GetConstructiveFractal(int algorithmType, int index)
+        public static IConstructiveFractal GetConstructiveFractal(int index)
         {
             IConstructiveFractal fractal;
 
-            if (algorithmType == 0)
-            {
-                if (index == 0)
-                    fractal = new KochRecursiveFractals();
-                else if (index == 1)
-                    fractal = new MinkowskiRecursiveFractal();
-                else
-                    fractal = new IceRecursiveFractal();
-            }
+            if (index == 0)
+                fractal = new KochRecursiveFractals();
+            else if (index == 1)
+                fractal = new MinkowskiRecursiveFractal();
             else
-            {
-                if (index == 0)
-                    fractal = new KochDirectFractals();
-                else if (index == 1)
-                    fractal = new MinkowskiDirectFractal();
-                else
-                    fractal = new IceDirectFractal();
-            }
+                fractal = new DragonRecursiveFractal();
 
             return fractal;
         }

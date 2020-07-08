@@ -45,9 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AbstractDirectFractal.cs" />
     <Compile Include="AbstractRecursiveFractal.cs" />
-    <Compile Include="MinkowskiDirectFractal.cs" />
     <Compile Include="MinkowskiRecursiveFractal.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -56,10 +54,8 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="FractalFactory.cs" />
-    <Compile Include="IceDirectFractal.cs" />
-    <Compile Include="IceRecursiveFractal.cs" />
+    <Compile Include="DragonRecursiveFractal.cs" />
     <Compile Include="IConstructiveFractal.cs" />
-    <Compile Include="KochDirectFractals.cs" />
     <Compile Include="KochRecursiveFractals.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

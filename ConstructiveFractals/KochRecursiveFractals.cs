@@ -27,9 +27,7 @@ namespace ConstructiveFractals
 
             return new List<PointF>
             {
-                p1,
-                p2,
-                p3
+                p1, p2, p3
             };
         }
     }

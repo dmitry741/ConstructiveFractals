@@ -28,8 +28,9 @@ namespace ConstructiveFractals
 
         void RenderFractal(Graphics g)
         {
-            PointF start = new PointF(16, pictureBox1.Height / 2);
-            PointF end = new PointF(pictureBox1.Width - 16, pictureBox1.Height / 2);
+            const int cShift = 32;
+            PointF start = new PointF(cShift, pictureBox1.Height / 2);
+            PointF end = new PointF(pictureBox1.Width - cShift, pictureBox1.Height / 2);
             int N = comboBox1.SelectedIndex + 1;
             IEnumerable<PointF> points = _fractal.Build(N, start, end);
 
@@ -60,7 +61,7 @@ namespace ConstructiveFractals
         {
             pictureBox1.BackColor = Color.White;
             _bitmap = CreateBackground(pictureBox1.Width, pictureBox1.Height);
-            _fractal = FractalFactory.GetConstructiveFractal(radioButton1.Checked ? 0 : 1, 0);
+            _fractal = FractalFactory.GetConstructiveFractal(0);
 
             const int cMaxIteration = 5;
 
@@ -74,7 +75,7 @@ namespace ConstructiveFractals
             // типы фракталов
             comboBox2.Items.Add("Кривая Коха");
             comboBox2.Items.Add("Минковский");
-            comboBox2.Items.Add("Лед");
+            comboBox2.Items.Add("Дракон");
             comboBox2.SelectedIndex = 0;
         }
 
@@ -100,19 +101,7 @@ namespace ConstructiveFractals
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
-            _fractal = FractalFactory.GetConstructiveFractal(radioButton1.Checked ? 0 : 1, comboBox2.SelectedIndex);
-            Render();
-        }
-
-        private void radioButton1_CheckedChanged(object sender, EventArgs e)
-        {
-            _fractal = FractalFactory.GetConstructiveFractal(radioButton1.Checked ? 0 : 1, comboBox2.SelectedIndex);
-            Render();
-        }
-
-        private void radioButton2_CheckedChanged(object sender, EventArgs e)
-        {
-            _fractal = FractalFactory.GetConstructiveFractal(radioButton1.Checked ? 0 : 1, comboBox2.SelectedIndex);
+            _fractal = FractalFactory.GetConstructiveFractal(comboBox2.SelectedIndex);
             Render();
         }
     }
