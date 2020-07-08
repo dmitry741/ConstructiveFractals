@@ -45,6 +45,7 @@ namespace ConstructiveFractals
             Graphics g = Graphics.FromImage(_bitmap);
             g.Clear(Color.White);
 
+            // отрисовка фарктала
             RenderFractal(g);
 
             pictureBox1.Image = _bitmap;

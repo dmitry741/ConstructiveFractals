@@ -11,6 +11,11 @@ namespace ConstructiveFractals
     /// </summary>
     class FractalFactory
     {
+        /// <summary>
+        /// Создание экземпляра фрактала по исходным данным пользовательского интерфейса.
+        /// </summary>
+        /// <param name="index">Индекс в выпадающем списке.</param>
+        /// <returns>IConstructiveFractal объект.</returns>
         public static IConstructiveFractal GetConstructiveFractal(int index)
         {
             IConstructiveFractal fractal;
