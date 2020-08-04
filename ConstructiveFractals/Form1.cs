@@ -28,9 +28,9 @@ namespace ConstructiveFractals
 
         void RenderFractal(Graphics g)
         {
-            const int cShift = 32;
-            PointF start = new PointF(cShift, pictureBox1.Height / 2);
-            PointF end = new PointF(pictureBox1.Width - cShift, pictureBox1.Height / 2);
+            const int cShift = 36;
+            PointF start = new PointF(cShift, pictureBox1.Height - 16);
+            PointF end = new PointF(pictureBox1.Width - cShift, pictureBox1.Height- 16);
             int N = comboBox1.SelectedIndex + 1;
             IEnumerable<PointF> points = _fractal.Build(N, start, end);
 
@@ -64,7 +64,7 @@ namespace ConstructiveFractals
             _bitmap = CreateBackground(pictureBox1.Width, pictureBox1.Height);
             _fractal = FractalFactory.GetConstructiveFractal(0);
 
-            const int cMaxIteration = 5;
+            const int cMaxIteration = 8;
 
             for (int i = 1; i <= cMaxIteration; i++)
             {
@@ -74,10 +74,8 @@ namespace ConstructiveFractals
             comboBox1.SelectedIndex = 0;
 
             // типы фракталов
-            comboBox2.Items.Add("Кривая Коха");
-            comboBox2.Items.Add("Минковский");
-            comboBox2.Items.Add("Дракон");
             comboBox2.Items.Add("Лед");
+            comboBox2.Items.Add("Треугольник Серпинского");
             comboBox2.SelectedIndex = 0;
         }
 

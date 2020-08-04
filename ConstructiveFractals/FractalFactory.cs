@@ -21,13 +21,9 @@ namespace ConstructiveFractals
             IConstructiveFractal fractal;
 
             if (index == 0)
-                fractal = new KochRecursiveFractals();
-            else if (index == 1)
-                fractal = new MinkowskiRecursiveFractal();
-            else if (index == 2)
-                fractal = new DragonRecursiveFractal();
-            else
                 fractal = new IceRecursiveFractal();
+            else
+                fractal = new SierpinskiTriangle();
 
             return fractal;
         }

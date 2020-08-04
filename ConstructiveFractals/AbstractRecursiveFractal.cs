@@ -12,10 +12,14 @@ namespace ConstructiveFractals
     /// </summary>
     abstract class AbstractRecursiveFractal : IConstructiveFractal
     {
+        protected int _iteration = 0;
+
         protected abstract IEnumerable<PointF> TransformSegment(PointF point1, PointF point2);
 
         public IEnumerable<PointF> Build(int N, PointF startPoint, PointF endPoint)
         {
+            _iteration = 0;
+
             List<PointF> points = new List<PointF>
             {
                 startPoint,

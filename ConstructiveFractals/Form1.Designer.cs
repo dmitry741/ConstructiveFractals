@@ -41,16 +41,16 @@ namespace ConstructiveFractals
             // 
             this.pictureBox1.Location = new System.Drawing.Point(12, 12);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(850, 566);
+            this.pictureBox1.Size = new System.Drawing.Size(850, 693);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.SizeChanged += new System.EventHandler(this.pictureBox1_SizeChanged);
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(886, 547);
+            this.btnClose.Location = new System.Drawing.Point(872, 674);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(108, 31);
+            this.btnClose.Size = new System.Drawing.Size(172, 31);
             this.btnClose.TabIndex = 1;
             this.btnClose.Text = "Выход";
             this.btnClose.UseVisualStyleBackColor = true;
@@ -62,7 +62,7 @@ namespace ConstructiveFractals
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(886, 48);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(109, 21);
+            this.comboBox1.Size = new System.Drawing.Size(158, 21);
             this.comboBox1.TabIndex = 4;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
@@ -90,7 +90,7 @@ namespace ConstructiveFractals
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Location = new System.Drawing.Point(886, 99);
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(109, 21);
+            this.comboBox2.Size = new System.Drawing.Size(158, 21);
             this.comboBox2.TabIndex = 7;
             this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
@@ -98,7 +98,7 @@ namespace ConstructiveFractals
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1007, 590);
+            this.ClientSize = new System.Drawing.Size(1054, 717);
             this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
